@@ -9,7 +9,7 @@
   --primary-color: white;
   --secondary-color: gray;
 }
-body {
+body { 
   background: #222;
   min-height: 100vh;
   display: flex;
