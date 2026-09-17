@@ -103,9 +103,7 @@ The API returns temperature in Kelvin by default, and the application converts i
 
 Add screenshots of the application here:
 
-```md
 ![Weather App](./images/screenshot.png)
-```
 
 ## 🧑‍💻 Future Improvements
 
@@ -115,7 +113,7 @@ Some possible improvements:
 - Improve error messages for invalid cities and API errors
 - Add a 5-day weather forecast
 - Add temperature unit switching between Celsius and Fahrenheit
-- Add current-location weather using browser geolocation
+- Add current-location weather using browser geolocation (Added in commit #b46d2b5)
 - Improve accessibility
 - Move API requests behind a backend/serverless function
 - Add API-key restrictions and better secret management
