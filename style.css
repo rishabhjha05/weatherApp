@@ -5,16 +5,17 @@
   font-family: Poppins, sans-serif;
 }
 :root {
-    --primary-bg-color:#ebfffc;
+  --primary-bg-color: #ebfffc;
   --primary-color: white;
   --secondary-color: gray;
 }
-body { 
+body {
   background: #222;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 7rem;
 }
 
 header {
@@ -27,17 +28,17 @@ header {
   background: var(--primary-bg-color);
   display: flex;
   justify-content: space-between;
-  h2{
+  h2 {
     font-weight: 500;
     letter-spacing: 2px;
   }
-  i{
+  i {
     font-size: 2rem;
     cursor: pointer;
   }
 }
 .card {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: linear-gradient(135deg, #00feba, #5b548a);
   width: max(350px, 40%);
   border-radius: 15px;
@@ -86,15 +87,77 @@ header {
 .search-icon-wraper:hover {
   color: var(--secondary-color);
 }
-.wether{
+.wether {
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 0.75rem;
+  row-gap: 1rem;
+  #city-name,
+  #temperature {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  #city-name {
+    margin-top: -1rem;
+  }
+  #temperature {
+    letter-spacing: 2px;
+    span {
+      font-size: 2.5rem;
+    }
+  }
 }
-.breif-detail{
+.breif-detail {
+  width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  .humidity-wraper,
+  .wind-wraper {
+    display: flex;
+    gap: 1rem;
+  }
+  #humidity,
+  #wind {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    h3{
+      font-weight: 500;
+    }
+  }
+  img {
+    width: 2rem;
+    height: 2rem;
+    align-self: center;
+  }
+}
+@media (max-width: 500px) {
+  header{
+    h2{
+      letter-spacing: 1px;
+    }
+  }
+  .card {
+    .search-container{
+      gap: 0.5rem;
+      .input-wraper{
+        width: 80%;
+      }
+    }
+    padding: 2rem 0.5rem;
+  }
+  .wether{
+  
+    gap: 1.5rem;
+  }
+  .breif-detail{
+    width: 90%;
+    img{
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
 }
