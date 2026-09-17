@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 'Poppins',sans-serif;
+}
+body{
+    background: linear-gradient(135deg,#00feba,#5b548a);
+    min-height: 100vh;
+}
