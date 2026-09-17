@@ -86,3 +86,15 @@ header {
 .search-icon-wraper:hover {
   color: var(--secondary-color);
 }
+.wether{
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.75rem;
+}
+.breif-detail{
+  display: flex;
+  justify-content: space-between;
+}
