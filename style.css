@@ -87,7 +87,7 @@ header {
 .search-icon-wraper:hover {
   color: var(--secondary-color);
 }
-.wether {
+.weather {
   color: var(--primary-color);
   display: flex;
   flex-direction: column;
