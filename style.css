@@ -5,6 +5,7 @@
   font-family: Poppins, sans-serif;
 }
 :root {
+    --primary-bg-color:#ebfffc;
   --primary-color: white;
   --secondary-color: gray;
 }
@@ -23,7 +24,7 @@ header {
   right: 0;
   width: 100%;
   padding: 1rem;
-  background: var(--primary-color);
+  background: var(--primary-bg-color);
   display: flex;
   justify-content: space-between;
   h2{
@@ -56,7 +57,7 @@ header {
   justify-content: center;
   input {
     width: 100%;
-    background: var(--primary-color);
+    background: var(--primary-bg-color);
     padding: 0.8rem;
     border: none;
     border-radius: 30px;
@@ -70,7 +71,7 @@ header {
   }
 }
 .search-icon-wraper {
-  background: var(--primary-color);
+  background: var(--primary-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
