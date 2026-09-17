@@ -34,3 +34,8 @@ search.addEventListener('click', () => {
 searchInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') changeData(searchInput.value);
 });
+
+const git=document.querySelector('.fa-github');
+git.addEventListener('click',()=>{
+    window.open('https://github.com/rishabhjha05',"_blank")
+})
