@@ -59,10 +59,10 @@ function changeDataCoordinate(lat,lon){
     
 }
 search.addEventListener('click', () => {
-  changeData(searchInput.value);
+  changeDataCity(searchInput.value);
 });
 searchInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') changeData(searchInput.value);
+  if (event.key === 'Enter') changeDataCity(searchInput.value);
 });
 
 const git = document.querySelector('.fa-github');
