@@ -81,5 +81,5 @@ searchInput.addEventListener('keydown', (event) => {
 
 const git = document.querySelector('.fa-github');
 git.addEventListener('click', () => {
-  window.open('https://github.com/rishabhjha05', '_blank');
+  window.open('https://github.com/rishabhjha05/weatherApp', '_blank');
 });
