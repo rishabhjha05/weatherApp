@@ -9,7 +9,7 @@
   --primary-color: white;
   --secondary-color: gray;
   --error: #ff6347;
-  --success:#28a745;
+  --success: #28a745;
 }
 body {
   background: #222;
@@ -148,17 +148,14 @@ header {
   justify-content: flex-end;
   flex-direction: column;
   gap: 1rem;
-  height: 57vh;
+  max-height: 57vh;
 }
 .toast {
   position: relative;
   width: 275px;
   padding: 1rem;
   background: var(--primary-color);
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -193,7 +190,7 @@ header {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 }
-.successToast{
+.successToast {
   color: var(--success);
 }
 .successToast::after {
@@ -214,12 +211,12 @@ header {
 }
 @keyframes borderShrink {
   from {
-    transform: scaleX(1);  ;
+    transform: scaleX(1);
     -webkit-transform: scaleX(1);
     -moz-transform: scaleX(1);
     -ms-transform: scaleX(1);
     -o-transform: scaleX(1);
-}
+  }
 
   to {
     transform: scaleX(0);
@@ -227,9 +224,45 @@ header {
     -moz-transform: scaleX(0);
     -ms-transform: scaleX(0);
     -o-transform: scaleX(0);
-}
+  }
 }
 
+@media (max-width: 1050px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  .toast-box {
+    bottom: -100px;
+    .toast{
+      width: 200px;
+      font-size: 0.75rem;
+    }
+  }
+}
+@media (max-width: 1050px) {
+  .breif-detail {
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+@media (max-width: 950px) {
+  .search-container {
+    gap: 0.75rem;
+    .input-wraper {
+      width: 75%;
+    }
+  }
+  .breif-detail {
+    h3 {
+      font-size: 1rem;
+    }
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}
 @media (max-width: 500px) {
   header {
     h2 {
