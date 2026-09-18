@@ -27,7 +27,7 @@ header {
   right: 0; */
   width: 100%;
   padding: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   background: var(--primary-bg-color);
   display: flex;
   justify-content: space-between;
@@ -141,7 +141,7 @@ header {
 }
 .toast-box {
   position: absolute;
-  bottom:-10px;
+  bottom: -10px;
   right: 0;
   padding: 2rem;
   display: flex;
@@ -166,11 +166,11 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: border 3s ease;
-  -webkit-transition: border 3s ease;
-  -moz-transition: border 3s ease;
-  -ms-transition: border 3s ease;
-  -o-transition: border 3s ease;
+  transition: border 2s ease;
+  -webkit-transition: border 2s ease;
+  -moz-transition: border 2s ease;
+  -ms-transition: border 2s ease;
+  -o-transition: border 2s ease;
 }
 .errorToast {
   color: var(--error);
@@ -184,7 +184,7 @@ header {
   border-bottom: 2px solid var(--error);
   transform-origin: left;
   animation: borderShrink 2s linear forwards;
-  -webkit-animation: borderShrink 3s linear forwards;
+  -webkit-animation: borderShrink 2s linear forwards;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -203,7 +203,7 @@ header {
   border-bottom: 2px solid var(--success);
   transform-origin: left;
   animation: borderShrink 2s linear forwards;
-  -webkit-animation: borderShrink 3s linear forwards;
+  -webkit-animation: borderShrink 2s linear forwards;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -211,7 +211,7 @@ header {
   -o-border-radius: 6px;
 }
 
-#credit{
+#credit {
   width: 100%;
   color: var(--primary-color);
   text-align: center;
@@ -241,7 +241,7 @@ header {
     padding: 1.5rem 1rem;
   }
   .toast-box {
-    .toast{
+    .toast {
       width: 200px;
       font-size: 0.75rem;
     }
@@ -256,6 +256,9 @@ header {
   }
 }
 @media (max-width: 950px) {
+  header {
+    margin-bottom: 1.5rem;
+  }
   .search-container {
     gap: 0.75rem;
     .input-wraper {
@@ -276,6 +279,7 @@ header {
     h2 {
       letter-spacing: 1px;
     }
+    margin-bottom: 2.5rem;
   }
   .card {
     .search-container {
