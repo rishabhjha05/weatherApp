@@ -8,6 +8,8 @@
   --primary-bg-color: #ebfffc;
   --primary-color: white;
   --secondary-color: gray;
+  --error: #ff6347;
+  --success:#28a745;
 }
 body {
   background: #222;
@@ -16,6 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 7rem;
+  position: relative;
 }
 
 header {
@@ -60,6 +63,7 @@ header {
     width: 100%;
     background: var(--primary-bg-color);
     padding: 0.8rem;
+    padding-left: 1.2rem;
     border: none;
     border-radius: 30px;
     -webkit-border-radius: 30px;
@@ -124,7 +128,7 @@ header {
     display: flex;
     flex-direction: column;
     font-weight: 300;
-    h3{
+    h3 {
       font-weight: 500;
     }
   }
@@ -134,28 +138,119 @@ header {
     align-self: center;
   }
 }
+.toast-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+  display: flex;
+  overflow-y: hidden;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 1rem;
+  height: 57vh;
+}
+.toast {
+  position: relative;
+  width: 275px;
+  padding: 1rem;
+  background: var(--primary-color);
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: border 3s ease;
+  -webkit-transition: border 3s ease;
+  -moz-transition: border 3s ease;
+  -ms-transition: border 3s ease;
+  -o-transition: border 3s ease;
+}
+.errorToast {
+  color: var(--error);
+}
+.errorToast::after {
+  content: '';
+  width: 100%;
+  inset: 0;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid var(--error);
+  transform-origin: left;
+  animation: borderShrink 2s linear forwards;
+  -webkit-animation: borderShrink 3s linear forwards;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.successToast{
+  color: var(--success);
+}
+.successToast::after {
+  content: '';
+  width: 100%;
+  inset: 0;
+  position: absolute;
+  bottom: 0;
+  border-bottom: 2px solid var(--success);
+  transform-origin: left;
+  animation: borderShrink 2s linear forwards;
+  -webkit-animation: borderShrink 3s linear forwards;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+@keyframes borderShrink {
+  from {
+    transform: scaleX(1);  ;
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+}
+
+  to {
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+}
+}
+
 @media (max-width: 500px) {
-  header{
-    h2{
+  header {
+    h2 {
       letter-spacing: 1px;
     }
   }
   .card {
-    .search-container{
+    .search-container {
       gap: 0.5rem;
-      .input-wraper{
+      .input-wraper {
         width: 80%;
       }
     }
     padding: 2rem 0.5rem;
   }
-  .wether{
-  
+  .wether {
     gap: 1.5rem;
   }
-  .breif-detail{
+  .breif-detail {
     width: 90%;
-    img{
+    img {
       width: 1.5rem;
       height: 1.5rem;
     }

@@ -1,6 +1,14 @@
 const search = document.querySelector('.search-icon-wraper');
 const searchInput = document.querySelector('#search-input');
-
+const toastBox = document.querySelector('.toast-box');
+function showToast(html,type){
+  const toast = document.createElement('div');
+  toast.classList.add('toast');
+  toast.classList.add(type);
+  toast.innerHTML = `${html}`;
+  setTimeout(()=>toastBox.removeChild(toast),3000);
+  toastBox.appendChild(toast);
+}
 navigator.geolocation.getCurrentPosition(
   (position) => {
     const { latitude, longitude } = position.coords;
@@ -8,7 +16,8 @@ navigator.geolocation.getCurrentPosition(
   },
   (err) => {
     console.warn(`ERROR(${err.code}): ${err.message}`);
-    alert("Location access is blocked. Please enable it in your browser settings.");
+    // alert(" Please enable it in your browser settings.");
+    showToast('<p>Location access is blocked!</p>','errorToast');
     changeDataCity('Delhi');
   },
 );
@@ -34,11 +43,17 @@ function changeDataCity(city) {
     <h3>${data.wind.speed} km/h</h3>
     <span>Wind Speed</span>
     `;
+    showToast('<p>Fetched Successfully.</p>','successToast')
     })
-    .catch((err) => alert('Enter a valid city name'));
+    .catch((err) => {
+      if(city!=="")
+        showToast('<i class="fa-solid fa-circle-exclamation"></i> <p>City Not Found</p>','errorToast');
+      else
+        showToast('Enter a valid city name!','errorToast');
+    });
 }
-function changeDataCoordinate(lat,lon){
-    fetch(
+function changeDataCoordinate(lat, lon) {
+  fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c14da68727310578ee9d40d96ca3124c`,
   )
     .then((res) => res.json())
@@ -55,8 +70,7 @@ function changeDataCoordinate(lat,lon){
     <span>Wind Speed</span>
     `;
     })
-    .catch((err) => alert("Data not found"));
-    
+    .catch((err) => alert('Data not found'));
 }
 search.addEventListener('click', () => {
   changeDataCity(searchInput.value);

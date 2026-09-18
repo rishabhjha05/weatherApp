@@ -110,7 +110,7 @@ Add screenshots of the application here:
 Some possible improvements:
 
 - Add a loading state while fetching weather data
-- Improve error messages for invalid cities and API errors
+- Improve error messages for invalid cities and API errors(Added Toast)
 - Add a 5-day weather forecast
 - Add temperature unit switching between Celsius and Fahrenheit
 - Add current-location weather using browser geolocation (Added in commit #b46d2b5)
